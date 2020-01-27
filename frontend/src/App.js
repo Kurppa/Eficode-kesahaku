@@ -21,7 +21,7 @@ const App = () => {
   })
 
   const containerStyle = {
-    height: '100%',
+    minHeight: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
