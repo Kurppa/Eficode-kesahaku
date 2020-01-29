@@ -27,7 +27,7 @@ const Route = ({ route }) => {
   }
 
   return (
-    <div style={cardStyle}>
+    <div className='route-div' style={cardStyle}>
       {
         route.legs.map((leg, id) => (
           <React.Fragment key={id + ' ' + leg.startTime}>
