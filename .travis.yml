@@ -1,5 +1,5 @@
 language: node_js
-before_script: 
+node_js: 
+    - 13
+before_install: 
     - cd frontend
-script:
-    - npm test
