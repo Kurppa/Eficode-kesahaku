@@ -1,3 +1,6 @@
+@import "node_modules/bulmaswatch/slate/bulmaswatch";
+@import 'node_modules/bulma-extensions/bulma-pageloader/dist//css/bulma-pageloader.sass';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,14 +8,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkgrey;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar .navbar-item {
+  border-left: 0;
+  border-right: 0;
 }
 
 body, html, #root {
   height: 100%;
+}
+
+.navbar .navbar-item:hover {
+
+  background-color: #3a3f44;
+  border-left: 0;
 }

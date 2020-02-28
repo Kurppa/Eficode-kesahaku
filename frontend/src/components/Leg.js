@@ -1,12 +1,11 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import propTypes from 'prop-types'
-
-import { Icon } from 'semantic-ui-react'
 
 const iconMap = {
   SUBWAY: {
     name: 'subway',
-    color: 'orange'
+    color: '#ed8224'
   },
   BUS: {
     name: 'bus',
@@ -14,7 +13,7 @@ const iconMap = {
   },
   WALK: {
     name: 'male',
-    color: 'black'
+    color: 'yellow'
   },
   TRAM: {
     name: 'train',
@@ -33,8 +32,7 @@ const Leg = ({ leg, time }) => {
   return (
     <div style={legStyle}>
       <div style={{ fontWeight: 'bold' }}>
-        <Icon name={iconMap[leg.mode].name}
-          size='large' color={iconMap[leg.mode].color} />
+        <FontAwesomeIcon style={{ marginRight: '0.3rem'}} icon={iconMap[leg.mode].name} size='lg' color={iconMap[leg.mode].color}/>
         { leg.trip ? leg.trip.routeShortName : ''}
       </div>
       <div>
