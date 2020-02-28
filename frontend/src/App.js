@@ -27,14 +27,14 @@ const App = () => {
             <div className="navbar-item">
               <img src={logo} alt="Eficode logo" />
             </div>
+              <div className='navbar-item'>
+                <h4 style={{ fontFamily: 'Montserrat'}} className="title is-4 has-text-white">
+                    eficode
+                </h4>
+              </div>
           </div>
           <div className="navbar-menu">
             <div className='navbar-start'>
-              <div className='navbar-item'>
-                <h4 className="title is-4 has-text-white">
-              EFICODE
-                </h4>
-              </div>
             </div>
           </div>
         </div>

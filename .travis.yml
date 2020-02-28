@@ -1,5 +1,19 @@
 language: node_js
-node_js: 
-    - 13
-before_install: 
-    - cd frontend
+node_js:
+- 13
+services:
+- docker
+before_install:
+- cd frontend
+script:
+- cd ..
+- docker build -t registry.heroku.com/eficode-haku .
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
+env:
+  global:
+  - secure: lVi58tSJvR/YAPyFSuB9iqF2osAYm00w2GAmra7o6sPy+op1RO/54ifsx8c5S4LYSeWVi3ANInpI+p03/oPPo+NQ8fGYzL7R3lbxTz6TC9m2KQktATsBuJxPh4Ab7lkyPsxHbhwZKsEAxQzBXyqncphMEpETNv64Fsf9AblKv2ZVrRNcmSqAS+MrL+hMSiaEgbuzNcHxDsMZIvgWoHo12Kh2i7yt/ALeRaKgyHlghA8aeRoQLEsuZIBS4hCMh+zz9Ix5kSvmFE0+fpIB00Xq74GjESDUiyQfk16fkY44nlEidIHPxX1siW3jDEZ3o+mf90aSsAZBPX5684TxhOhCAuLB7/XX6d/wsCfxFifrRh1I2SdXG0I0nfgu2Wn4KE2NJNO1yM9GnxtLJMAS9UnmrCVPtxT2LyGw3RuUqtawHcnGcrbMm+OYcC3dDL1ve5yjuVN65piQNfyWVJy0eJehSFcIhGeHvRtkCBVVUkfYQaEa6tLJskSwNC4upMPgUTjj8ROxgCjFac85T8u1U1APL2RqvIUiVeJyzT1V6nFqaqF9XQ691JQfaq6I54Rsd+GuCkpXXlbMdAnYky2zZPXxUVO+H+2gInu9dIE76Nk3qNVoeDY/V3An5S72+1fo+8qBRUDy+K12yTui7ZG6gsMNkB3ykL3ydPTAJAy2GISjE0I=
+  - secure: Kv7ApRT/Ukd8ppBefOlzYmMM8VScZ6IvXPPtcvBH2QKIEA/h9F3cH2Od0mL10CJoZ+/Q7dS9PIsKgRhJHWWuzJsb7gHa3pYv6RnTRHR5JfWrN/5N1+gYJCgfoRXxgd3uMqEoR8CSI/DHyAFqRlqkIdSHSg5OZNyeE4YDKmcKTgydOcykSIRL99hPtWZOEJ0RicXepe+GN5cNFKQndtSWiYrvIK14cL+2zlUVrhyOa1kNSJYuUOgEqdVSgY95ogO3X3UnO3G3TllWVYnMhZGekMWWNdpZ5FTeuBXXimPmTEyb7oFRlNiFyvkH98EcoKtbbTwP79LrosNjYOFYm51LYMRS+Pjd3XsVwUqaycCjzfDQ5+mMK572XsLSb1euPF73/brphj4Vr3KqCQ1Eu9+Z3omR3xKTmYs7HClfMZVH76fHkBhdyQf5Dph3SP4pB3HzxzcZr0ZDfOfcObOSnd2TYsxJ49NAFItfnyX85mSra6QkjOlWza5hSmtKmjCDIksvux3PnbBJnCY5Ga8Ql4OisLz80FbHhSCbg7H56T6bTRs2Y+P+49MRzI0rQ/PVrhcuB8MTvdMZQTrA9cILxZ5Nn63/r8AS0yBQhxnswQqQ/5QyoZAkvtkrlhqjBc+t3FInypIZXFIKK23bdkRI4MugPi2ykHDLnruxCeVqGM7FhFY=
